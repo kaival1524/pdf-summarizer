@@ -4,4 +4,4 @@ The usage for this code is that it will allow for users to efficiently gather im
 
 The project implements NLP techniques in python to select the most important aspects of the text and display it to the user.
 
-[2023-07-06 15-47.pdf](https://github.com/kaival1524/pdf-summarizer/files/11971734/2023-07-06.15-47.pdf)
+https://github.com/kaival1524/pdf-summarizer/files/11971741/2023-07-06.15-47.1.pdf
