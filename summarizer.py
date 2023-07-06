@@ -68,3 +68,20 @@ if file_path is not None:
     sentence_tokes = [sent for sent in doc.sents]
 
     sentence_scores = {}
+    for sent in sentence_tokes:
+        for word in sent:
+            if word.text.lower() in word_frequencies.keys():
+                if sent not in sentence_scores.keys():
+                    sentence_scores[sent] = word_frequencies[word.text.lower()]
+                else:
+                    sentence_scores[sent] += word_frequencies[word.text.lower()]
+    
+    select_length = int(len(sentence_tokes) * 0.005) # 0.005 is summary length of orignal text
+    summary = nlargest(select_length, sentence_scores, key = sentence_scores.get)
+
+    final =[word.text for word in summary]
+    summary = ''.join(final)
+
+    final_str = fix_string(summary)
+
+    st.write(final_str)
